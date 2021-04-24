@@ -15,6 +15,9 @@ import javax.persistence.Id;
 * 4. Gražinti visus studentus pagal programvimo kalbą:
  * 5. Gražinti visus studentus pagal programavimo kalbą ir kurie yra Remote
  * 6. Gražinti visus studentus sugrupuotus pagal miestą. vilnius: [ student1,student2], kaunas: [],..
+ *  application.yml-ddl-auto: none nenudropina duomenu
+ *
+ *
  */
 
 public class Student {

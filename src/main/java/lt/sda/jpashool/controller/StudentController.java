@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/students")
@@ -32,4 +33,18 @@ public class StudentController {
     public Student findByNameAndSurname(@RequestParam String name, @RequestParam String surname){
         return studentService.findByNameAndSurname(name, surname);
     }
+
+    @GetMapping(value = "/findByLanguage")
+    public List<Student> findByLanguage(@RequestParam String programmingLanguage) {
+        return studentService.findByLanguage(programmingLanguage);
+    }
+    @GetMapping(value = "/findByRemote")
+    public List<Student> findByRemote(@RequestParam String programmingLanguage) {
+        return studentService.findByLanguageAndRemote(programmingLanguage);
+    }
+    @GetMapping(value = "/findGrouped")
+    public Map<String, List<Student>> findStudentsGroupedByCity() {
+        return studentService.findGroupedByCity();
+    }
+
 }
